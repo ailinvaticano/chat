@@ -1,0 +1,129 @@
+Project: Django Chat Room
+Objectives:
+User Authentication:
+
+Users should be able to register with a unique username and password.
+Users should be able to log in and log out.
+Chat Room Overview:
+
+Upon logging in, users should see a list of available chat rooms.
+Users can join or create a new chat room.
+1v1 Chats:
+
+Users should be able to send and receive private messages (1v1 chats).
+Each user should have a unique profile page displaying their recent chats.
+Real-time Communication:
+
+Implement real-time updates for new messages using Django Channels or a similar technology.
+Message Features:
+
+Users can send text messages.
+Include support for basic text formatting (bold, italics, etc.).
+Timestamps for messages.
+Security:
+
+Implement appropriate security measures to protect against common web vulnerabilities (e.g., CSRF protection, secure password storage).
+User Interface:
+
+Design a clean and user-friendly interface using HTML, CSS, and potentially JavaScript.
+Ensure responsiveness for different screen sizes.
+Database:
+
+Use Django ORM to store and retrieve chat messages, user information, and chat room data.
+Additional Features (Optional):
+
+Add emoji support.
+Implement file/image sharing.
+Include notifications for new messages.
+Testing:
+
+Write unit tests for critical parts of the application to ensure its robustness.
+Documentation:
+
+Provide documentation on how to set up and run the project.
+Document any additional features or configurations.
+Technologies:
+Backend:
+
+Django (Django ORM, Django Channels for real-time communication)
+SQLite or PostgreSQL for the database
+Frontend:
+
+HTML, CSS
+Use Django templates for rendering dynamic content
+(Optional) JavaScript for enhanced interactivity
+Version Control:
+
+Use Git for version control. Host the code on platforms like GitHub or GitLab.
+Submission Guidelines:
+The project should be submitted with clear instructions on how to run it locally.
+Include a README file with a brief overview of the project, dependencies, and setup instructions.
+Provide any additional notes or explanations that could help someone understand the project better.
+
+-----------------------------------------------------------------------------------
+
+Proyecto: Sala de Chat Django
+Objetivos:
+Autenticacion de usuario:
+
+Los usuarios deberían poder registrarse con un nombre de usuario y contraseña únicos.
+Los usuarios deberían poder iniciar y cerrar sesión.
+Descripción general de la sala de chat:
+
+Al iniciar sesión, los usuarios deberían ver una lista de salas de chat disponibles.
+Los usuarios pueden unirse o crear una nueva sala de chat.
+Charlas 1v1:
+
+Los usuarios deberían poder enviar y recibir mensajes privados (chats 1v1).
+Cada usuario debe tener una página de perfil única que muestre sus chats recientes.
+Comunicación en tiempo real:
+
+Implemente actualizaciones en tiempo real para nuevos mensajes utilizando Django Channels o una tecnología similar.
+Características del mensaje:
+
+Los usuarios pueden enviar mensajes de texto.
+Incluya soporte para formato de texto básico (negrita, cursiva, etc.).
+Marcas de tiempo para mensajes.
+Seguridad:
+
+Implemente medidas de seguridad adecuadas para protegerse contra vulnerabilidades web
+comunes (por ejemplo, protección CSRF, almacenamiento seguro de contraseñas).
+Interfaz de usuario:
+
+Diseñe una interfaz limpia y fácil de usar utilizando HTML, CSS y potencialmente JavaScript.
+Garantice la capacidad de respuesta para diferentes tamaños de pantalla.
+Base de datos:
+
+Utilice Django ORM para almacenar y recuperar mensajes de chat, información de usuario y datos de salas de chat.
+Funciones adicionales (opcional):
+
+Añade soporte para emojis.
+Implementar el intercambio de archivos/imágenes.
+Incluir notificaciones de mensajes nuevos.
+Pruebas:
+
+Escriba pruebas unitarias para partes críticas de la aplicación para garantizar su solidez.
+Documentación:
+
+Proporcione documentación sobre cómo configurar y ejecutar el proyecto.
+Documente cualquier característica o configuración adicional.
+Tecnologías:
+Parte trasera:
+
+Django (Django ORM, canales Django para comunicación en tiempo real)
+SQLite o PostgreSQL para la base de datos
+Interfaz:
+
+HTML, CSS
+Utilice plantillas de Django para representar contenido dinámico
+(Opcional) JavaScript para mejorar la interactividad
+Control de versiones:
+
+Utilice Git para el control de versiones. Aloja el código en plataformas como GitHub o GitLab.
+Directrices para el envío:
+El proyecto debe enviarse con instrucciones claras sobre cómo ejecutarlo localmente.
+Incluya un archivo README con una breve descripción general del proyecto, las dependencias
+y las instrucciones de configuración.
+Proporcione notas o explicaciones adicionales que puedan ayudar a
+alguien a comprender mejor el proyecto.
+
