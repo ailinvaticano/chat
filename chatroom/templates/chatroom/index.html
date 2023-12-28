@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <a href="{% url 'chat_box_create' %}"> Queres crear tu chatroom? Haz click aqui. </a>
+    {% if owned_chatbox_list %}
+        <ul>
+            <h4>Sos autor de los siguientes chats: </h4>
+            {% for chat in owned_chatbox_list %}
+            <li><a href="{% url 'chat_box_detail' pk=chat.id %}">{{ chat.boxname }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+    <p> No sos el creador de ningun chats.</p>
+    {% endif %}
+    {% if guest_chatbox_list %}
+        <ul>
+            <h4>Fuiste invitado a los siguientes chats: </h4>
+            {% for chat in guest_chatbox_list %}
+            <li><a href="{% url 'chat_box_detail' pk=chat.id %}">{{ chat.boxname }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+    <p> No fuiste invitado a ningun chats todavia.</p>
+    {% endif %}
+{% endblock %}

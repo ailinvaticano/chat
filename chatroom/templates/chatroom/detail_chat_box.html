@@ -1,0 +1,63 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1> {{ object.boxname }} </h1>
+<h3>Autor: {{ object.author }} </h3>
+<h3>Invitado: {{ object.guest }} </h3>
+<h4>Mensajes: </h4>
+ <div id="chatbox">
+        <ul id="chat-messages">
+            {% for message in messages %}
+                <li>
+                    <p>{{ message.author }}: {{ message.content }} {{ message.time }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <form id="message-form">
+        <input type="text" id="message-input" autocomplete="off" placeholder="Type your message">
+        <button type="submit">Send</button>
+    </form>
+
+ <script>
+        const room_id = {{ object.id }};
+        const chatSocket = new WebSocket(
+            'ws://' + window.location.host +
+            '/ws/chat/' + room_id + '/');
+
+        chatSocket.onopen = function (e) {
+            // Handle initial messages received when the WebSocket connection is established
+            const initialMessages = JSON.parse("{{ initial_messages|safe }}");
+            initialMessages.forEach(message => appendMessage(message.author + ': ' + message.content + ': ' + message.time));
+        };
+
+        chatSocket.onmessage = function (e) {
+            const data = JSON.parse(e.data);
+            appendMessage(data.author + ': ' + data.content + ': ' + data.time);
+        };
+
+        document.querySelector('#message-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const messageInput = document.querySelector('#message-input');
+            const messageContent = messageInput.value.trim();
+
+            if (messageContent !== '') {
+                // Send the message to the server
+                chatSocket.send(JSON.stringify({
+                    'content': messageContent
+                }));
+
+                // Clear the message input
+                messageInput.value = '';
+            }
+        });
+
+        function appendMessage(message) {
+            const ul = document.querySelector('#chat-messages');
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(message));
+            ul.appendChild(li);
+        }
+    </script>
+{% endblock %}
+
